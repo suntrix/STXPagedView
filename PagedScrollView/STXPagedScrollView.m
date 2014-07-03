@@ -161,7 +161,7 @@
         [obj removeFromSuperview];
     }];
     
-    if ( nil != _delegate ) {
+    if ( [_delegate respondsToSelector:@selector(pagedScrollViewDidEndDecelerating:)] ) {
         [_delegate pagedScrollViewDidEndDecelerating:self];
     }
 }
@@ -170,12 +170,14 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ( [keyPath isEqualToString:@"_currentElementIndex"] && [object isEqual:self] ) {
-        if ( nil != _delegate ) {
+        if ( [_delegate respondsToSelector:@selector(pagedScrollView:didEndDisplayingPage:forElementAtIndex:)] ) {
             NSInteger previousElementIndex = [change[NSKeyValueChangeOldKey] integerValue];
             if ( -1 != previousElementIndex ) {
                 [_delegate pagedScrollView:self didEndDisplayingPage:[self pageAtIndex:previousElementIndex] forElementAtIndex:previousElementIndex];
             }
-            
+        }
+        
+        if ( [_delegate respondsToSelector:@selector(pagedScrollView:willDisplayPage:forElementAtIndex:)] ) {
             [_delegate pagedScrollView:self willDisplayPage:[self pageAtIndex:__currentElementIndex] forElementAtIndex:__currentElementIndex];
         }
     }
