@@ -1,2 +1,2 @@
-PagedScrollView
+STXPagedScrollView
 ==================
