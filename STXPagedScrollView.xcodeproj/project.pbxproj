@@ -11,9 +11,9 @@
 		E9160C261919725900F8215D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9160C251919725900F8215D /* XCTest.framework */; };
 		E9160C271919725900F8215D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9160C171919725800F8215D /* Foundation.framework */; };
 		E9160C291919725900F8215D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9160C281919725900F8215D /* UIKit.framework */; };
-		E9160C2C1919725900F8215D /* libPagedScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9160C141919725800F8215D /* libPagedScrollView.a */; };
+		E9160C2C1919725900F8215D /* libSTXPagedScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9160C141919725800F8215D /* libSTXPagedScrollView.a */; };
 		E9160C321919725900F8215D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9160C301919725900F8215D /* InfoPlist.strings */; };
-		E9160C341919725900F8215D /* PagedScrollViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160C331919725900F8215D /* PagedScrollViewTests.m */; };
+		E9160C341919725900F8215D /* STXPagedScrollViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160C331919725900F8215D /* STXPagedScrollViewTests.m */; };
 		E9160C411919729800F8215D /* STXPagedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160C3E1919729800F8215D /* STXPagedScrollView.m */; };
 		E9160C421919729800F8215D /* STXPagedScrollViewPage.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160C401919729800F8215D /* STXPagedScrollViewPage.m */; };
 		E9160C4B191973E600F8215D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9160C171919725800F8215D /* Foundation.framework */; };
@@ -30,7 +30,7 @@
 		E9160C6D191973E700F8215D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9160C281919725900F8215D /* UIKit.framework */; };
 		E9160C75191973E700F8215D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9160C73191973E700F8215D /* InfoPlist.strings */; };
 		E9160C77191973E700F8215D /* ExampleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160C76191973E700F8215D /* ExampleAppTests.m */; };
-		E9160C80191973F900F8215D /* libPagedScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9160C141919725800F8215D /* libPagedScrollView.a */; };
+		E9160C80191973F900F8215D /* libSTXPagedScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9160C141919725800F8215D /* libSTXPagedScrollView.a */; };
 		E9160C821919A8D000F8215D /* STXPagedScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = E9160C3D1919729800F8215D /* STXPagedScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9160C831919A8D200F8215D /* STXPagedScrollViewPage.h in Headers */ = {isa = PBXBuildFile; fileRef = E9160C3F1919729800F8215D /* STXPagedScrollViewPage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -41,7 +41,7 @@
 			containerPortal = E9160C0C1919725800F8215D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E9160C131919725800F8215D;
-			remoteInfo = PagedScrollView;
+			remoteInfo = STXPagedScrollView;
 		};
 		E9160C6E191973E700F8215D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -55,7 +55,7 @@
 			containerPortal = E9160C0C1919725800F8215D /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E9160C131919725800F8215D;
-			remoteInfo = PagedScrollView;
+			remoteInfo = STXPagedScrollView;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -72,15 +72,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E9160C141919725800F8215D /* libPagedScrollView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPagedScrollView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9160C141919725800F8215D /* libSTXPagedScrollView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSTXPagedScrollView.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9160C171919725800F8215D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		E9160C1B1919725900F8215D /* PagedScrollView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PagedScrollView-Prefix.pch"; sourceTree = "<group>"; };
-		E9160C241919725900F8215D /* PagedScrollViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PagedScrollViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9160C1B1919725900F8215D /* STXPagedScrollView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STXPagedScrollView-Prefix.pch"; sourceTree = "<group>"; };
+		E9160C241919725900F8215D /* STXPagedScrollViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STXPagedScrollViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9160C251919725900F8215D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E9160C281919725900F8215D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		E9160C2F1919725900F8215D /* PagedScrollViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PagedScrollViewTests-Info.plist"; sourceTree = "<group>"; };
+		E9160C2F1919725900F8215D /* STXPagedScrollViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "STXPagedScrollViewTests-Info.plist"; sourceTree = "<group>"; };
 		E9160C311919725900F8215D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E9160C331919725900F8215D /* PagedScrollViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PagedScrollViewTests.m; sourceTree = "<group>"; };
+		E9160C331919725900F8215D /* STXPagedScrollViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STXPagedScrollViewTests.m; sourceTree = "<group>"; };
 		E9160C3D1919729800F8215D /* STXPagedScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STXPagedScrollView.h; sourceTree = "<group>"; };
 		E9160C3E1919729800F8215D /* STXPagedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STXPagedScrollView.m; sourceTree = "<group>"; };
 		E9160C3F1919729800F8215D /* STXPagedScrollViewPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STXPagedScrollViewPage.h; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9160C261919725900F8215D /* XCTest.framework in Frameworks */,
-				E9160C2C1919725900F8215D /* libPagedScrollView.a in Frameworks */,
+				E9160C2C1919725900F8215D /* libSTXPagedScrollView.a in Frameworks */,
 				E9160C291919725900F8215D /* UIKit.framework in Frameworks */,
 				E9160C271919725900F8215D /* Foundation.framework in Frameworks */,
 			);
@@ -127,7 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9160C80191973F900F8215D /* libPagedScrollView.a in Frameworks */,
+				E9160C80191973F900F8215D /* libSTXPagedScrollView.a in Frameworks */,
 				E9160C4D191973E600F8215D /* CoreGraphics.framework in Frameworks */,
 				E9160C4E191973E600F8215D /* UIKit.framework in Frameworks */,
 				E9160C4B191973E600F8215D /* Foundation.framework in Frameworks */,
@@ -173,8 +173,8 @@
 		E9160C0B1919725800F8215D = {
 			isa = PBXGroup;
 			children = (
-				E9160C191919725900F8215D /* PagedScrollView */,
-				E9160C2D1919725900F8215D /* PagedScrollViewTests */,
+				E9160C191919725900F8215D /* STXPagedScrollView */,
+				E9160C2D1919725900F8215D /* STXPagedScrollViewTests */,
 				E9160C4F191973E600F8215D /* ExampleApp */,
 				E9160C70191973E700F8215D /* ExampleAppTests */,
 				E9160C161919725800F8215D /* Frameworks */,
@@ -185,8 +185,8 @@
 		E9160C151919725800F8215D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E9160C141919725800F8215D /* libPagedScrollView.a */,
-				E9160C241919725900F8215D /* PagedScrollViewTests.xctest */,
+				E9160C141919725800F8215D /* libSTXPagedScrollView.a */,
+				E9160C241919725900F8215D /* STXPagedScrollViewTests.xctest */,
 				E9160C4A191973E600F8215D /* ExampleApp.app */,
 				E9160C6A191973E700F8215D /* ExampleAppTests.xctest */,
 			);
@@ -204,7 +204,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E9160C191919725900F8215D /* PagedScrollView */ = {
+		E9160C191919725900F8215D /* STXPagedScrollView */ = {
 			isa = PBXGroup;
 			children = (
 				E9160C3D1919729800F8215D /* STXPagedScrollView.h */,
@@ -213,30 +213,30 @@
 				E9160C401919729800F8215D /* STXPagedScrollViewPage.m */,
 				E9160C1A1919725900F8215D /* Supporting Files */,
 			);
-			path = PagedScrollView;
+			path = STXPagedScrollView;
 			sourceTree = "<group>";
 		};
 		E9160C1A1919725900F8215D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E9160C1B1919725900F8215D /* PagedScrollView-Prefix.pch */,
+				E9160C1B1919725900F8215D /* STXPagedScrollView-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E9160C2D1919725900F8215D /* PagedScrollViewTests */ = {
+		E9160C2D1919725900F8215D /* STXPagedScrollViewTests */ = {
 			isa = PBXGroup;
 			children = (
-				E9160C331919725900F8215D /* PagedScrollViewTests.m */,
+				E9160C331919725900F8215D /* STXPagedScrollViewTests.m */,
 				E9160C2E1919725900F8215D /* Supporting Files */,
 			);
-			path = PagedScrollViewTests;
+			path = STXPagedScrollViewTests;
 			sourceTree = "<group>";
 		};
 		E9160C2E1919725900F8215D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E9160C2F1919725900F8215D /* PagedScrollViewTests-Info.plist */,
+				E9160C2F1919725900F8215D /* STXPagedScrollViewTests-Info.plist */,
 				E9160C301919725900F8215D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -301,9 +301,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		E9160C131919725800F8215D /* PagedScrollView */ = {
+		E9160C131919725800F8215D /* STXPagedScrollView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E9160C371919725900F8215D /* Build configuration list for PBXNativeTarget "PagedScrollView" */;
+			buildConfigurationList = E9160C371919725900F8215D /* Build configuration list for PBXNativeTarget "STXPagedScrollView" */;
 			buildPhases = (
 				E9160C101919725800F8215D /* Sources */,
 				E9160C111919725800F8215D /* Frameworks */,
@@ -314,14 +314,14 @@
 			);
 			dependencies = (
 			);
-			name = PagedScrollView;
-			productName = PagedScrollView;
-			productReference = E9160C141919725800F8215D /* libPagedScrollView.a */;
+			name = STXPagedScrollView;
+			productName = STXPagedScrollView;
+			productReference = E9160C141919725800F8215D /* libSTXPagedScrollView.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		E9160C231919725900F8215D /* PagedScrollViewTests */ = {
+		E9160C231919725900F8215D /* STXPagedScrollViewTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E9160C3A1919725900F8215D /* Build configuration list for PBXNativeTarget "PagedScrollViewTests" */;
+			buildConfigurationList = E9160C3A1919725900F8215D /* Build configuration list for PBXNativeTarget "STXPagedScrollViewTests" */;
 			buildPhases = (
 				E9160C201919725900F8215D /* Sources */,
 				E9160C211919725900F8215D /* Frameworks */,
@@ -332,9 +332,9 @@
 			dependencies = (
 				E9160C2B1919725900F8215D /* PBXTargetDependency */,
 			);
-			name = PagedScrollViewTests;
-			productName = PagedScrollViewTests;
-			productReference = E9160C241919725900F8215D /* PagedScrollViewTests.xctest */;
+			name = STXPagedScrollViewTests;
+			productName = STXPagedScrollViewTests;
+			productReference = E9160C241919725900F8215D /* STXPagedScrollViewTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		E9160C49191973E600F8215D /* ExampleApp */ = {
@@ -391,7 +391,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E9160C0F1919725800F8215D /* Build configuration list for PBXProject "PagedScrollView" */;
+			buildConfigurationList = E9160C0F1919725800F8215D /* Build configuration list for PBXProject "STXPagedScrollView" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -404,8 +404,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E9160C131919725800F8215D /* PagedScrollView */,
-				E9160C231919725900F8215D /* PagedScrollViewTests */,
+				E9160C131919725800F8215D /* STXPagedScrollView */,
+				E9160C231919725900F8215D /* STXPagedScrollViewTests */,
 				E9160C49191973E600F8215D /* ExampleApp */,
 				E9160C69191973E700F8215D /* ExampleAppTests */,
 			);
@@ -455,7 +455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9160C341919725900F8215D /* PagedScrollViewTests.m in Sources */,
+				E9160C341919725900F8215D /* STXPagedScrollViewTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,7 +482,7 @@
 /* Begin PBXTargetDependency section */
 		E9160C2B1919725900F8215D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E9160C131919725800F8215D /* PagedScrollView */;
+			target = E9160C131919725800F8215D /* STXPagedScrollView */;
 			targetProxy = E9160C2A1919725900F8215D /* PBXContainerItemProxy */;
 		};
 		E9160C6F191973E700F8215D /* PBXTargetDependency */ = {
@@ -492,7 +492,7 @@
 		};
 		E9160C7F191973F400F8215D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E9160C131919725800F8215D /* PagedScrollView */;
+			target = E9160C131919725800F8215D /* STXPagedScrollView */;
 			targetProxy = E9160C7E191973F400F8215D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -606,11 +606,11 @@
 		E9160C381919725900F8215D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/PagedScrollView.dst;
+				DSTROOT = /tmp/STXPagedScrollView.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PagedScrollView/PagedScrollView-Prefix.pch";
+				GCC_PREFIX_HEADER = "STXPagedScrollView/STXPagedScrollView-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = STXPagedScrollView;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -618,11 +618,11 @@
 		E9160C391919725900F8215D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/PagedScrollView.dst;
+				DSTROOT = /tmp/STXPagedScrollView.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PagedScrollView/PagedScrollView-Prefix.pch";
+				GCC_PREFIX_HEADER = "STXPagedScrollView/STXPagedScrollView-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = STXPagedScrollView;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -637,13 +637,13 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PagedScrollView/PagedScrollView-Prefix.pch";
+				GCC_PREFIX_HEADER = "STXPagedScrollView/STXPagedScrollView-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "PagedScrollViewTests/PagedScrollViewTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "STXPagedScrollViewTests/STXPagedScrollViewTests-Info.plist";
+				PRODUCT_NAME = STXPagedScrollViewTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -659,9 +659,9 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PagedScrollView/PagedScrollView-Prefix.pch";
-				INFOPLIST_FILE = "PagedScrollViewTests/PagedScrollViewTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "STXPagedScrollView/STXPagedScrollView-Prefix.pch";
+				INFOPLIST_FILE = "STXPagedScrollViewTests/STXPagedScrollViewTests-Info.plist";
+				PRODUCT_NAME = STXPagedScrollViewTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -754,7 +754,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E9160C0F1919725800F8215D /* Build configuration list for PBXProject "PagedScrollView" */ = {
+		E9160C0F1919725800F8215D /* Build configuration list for PBXProject "STXPagedScrollView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E9160C351919725900F8215D /* Debug */,
@@ -763,7 +763,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E9160C371919725900F8215D /* Build configuration list for PBXNativeTarget "PagedScrollView" */ = {
+		E9160C371919725900F8215D /* Build configuration list for PBXNativeTarget "STXPagedScrollView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E9160C381919725900F8215D /* Debug */,
@@ -772,7 +772,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E9160C3A1919725900F8215D /* Build configuration list for PBXNativeTarget "PagedScrollViewTests" */ = {
+		E9160C3A1919725900F8215D /* Build configuration list for PBXNativeTarget "STXPagedScrollViewTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E9160C3B1919725900F8215D /* Debug */,

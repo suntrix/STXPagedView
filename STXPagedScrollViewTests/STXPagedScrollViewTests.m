@@ -1,6 +1,6 @@
 //
-//  PagedScrollViewTests.m
-//  PagedScrollViewTests
+//  STXPagedScrollViewTests.m
+//  STXPagedScrollViewTests
 //
 //  Created by Sebastian Owodziń on 06/05/14.
 //  Copyright (c) 2014 Sebastian Owodziń. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface PagedScrollViewTests : XCTestCase
+@interface STXPagedScrollViewTests : XCTestCase
 
 @end
 
-@implementation PagedScrollViewTests
+@implementation STXPagedScrollViewTests
 
 - (void)setUp
 {
