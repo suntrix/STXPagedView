@@ -1,6 +1,6 @@
 //
 //  STXPagedScrollViewPage.h
-//  PagedScrollView
+//  STXPagedScrollView
 //
 //  Created by Sebastian Owodziń on 16/01/2014.
 //  Copyright (c) 2014 Sebastian Owodziń. All rights reserved.

@@ -33,6 +33,9 @@
 		E9160C80191973F900F8215D /* libSTXPagedScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9160C141919725800F8215D /* libSTXPagedScrollView.a */; };
 		E9160C821919A8D000F8215D /* STXPagedScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = E9160C3D1919729800F8215D /* STXPagedScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9160C831919A8D200F8215D /* STXPagedScrollViewPage.h in Headers */ = {isa = PBXBuildFile; fileRef = E9160C3F1919729800F8215D /* STXPagedScrollViewPage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9B3EC54196DE52800B5DBEB /* SimplePagedScrollViewPage.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B3EC53196DE52800B5DBEB /* SimplePagedScrollViewPage.m */; };
+		E9B3EC57196DE56C00B5DBEB /* PagesFromNibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B3EC56196DE56C00B5DBEB /* PagesFromNibViewController.m */; };
+		E9B3EC59196DE5A700B5DBEB /* SimplePagedScrollViewPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9B3EC58196DE5A700B5DBEB /* SimplePagedScrollViewPage.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +104,11 @@
 		E9160C72191973E700F8215D /* ExampleAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ExampleAppTests-Info.plist"; sourceTree = "<group>"; };
 		E9160C74191973E700F8215D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E9160C76191973E700F8215D /* ExampleAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleAppTests.m; sourceTree = "<group>"; };
+		E9B3EC52196DE52800B5DBEB /* SimplePagedScrollViewPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePagedScrollViewPage.h; sourceTree = "<group>"; };
+		E9B3EC53196DE52800B5DBEB /* SimplePagedScrollViewPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePagedScrollViewPage.m; sourceTree = "<group>"; };
+		E9B3EC55196DE56C00B5DBEB /* PagesFromNibViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagesFromNibViewController.h; sourceTree = "<group>"; };
+		E9B3EC56196DE56C00B5DBEB /* PagesFromNibViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagesFromNibViewController.m; sourceTree = "<group>"; };
+		E9B3EC58196DE5A700B5DBEB /* SimplePagedScrollViewPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimplePagedScrollViewPage.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +167,11 @@
 		E4A53B781952F0A300AA9752 /* PagesFromNib */ = {
 			isa = PBXGroup;
 			children = (
+				E9B3EC52196DE52800B5DBEB /* SimplePagedScrollViewPage.h */,
+				E9B3EC53196DE52800B5DBEB /* SimplePagedScrollViewPage.m */,
+				E9B3EC58196DE5A700B5DBEB /* SimplePagedScrollViewPage.xib */,
+				E9B3EC55196DE56C00B5DBEB /* PagesFromNibViewController.h */,
+				E9B3EC56196DE56C00B5DBEB /* PagesFromNibViewController.m */,
 			);
 			name = PagesFromNib;
 			sourceTree = "<group>";
@@ -379,9 +392,9 @@
 		E9160C0C1919725800F8215D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = T401;
+				CLASSPREFIX = STX;
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "Terror 401";
+				ORGANIZATIONNAME = "Sebastian Owodziń";
 				TargetAttributes = {
 					E9160C231919725900F8215D = {
 						TestTargetID = E9160C49191973E600F8215D;
@@ -428,6 +441,7 @@
 				E9160C65191973E700F8215D /* Images.xcassets in Resources */,
 				E9160C5D191973E700F8215D /* Main_iPhone.storyboard in Resources */,
 				E9160C54191973E700F8215D /* InfoPlist.strings in Resources */,
+				E9B3EC59196DE5A700B5DBEB /* SimplePagedScrollViewPage.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +480,8 @@
 				E9160C63191973E700F8215D /* BasicViewController.m in Sources */,
 				E9160C5A191973E700F8215D /* AppDelegate.m in Sources */,
 				E9160C56191973E700F8215D /* main.m in Sources */,
+				E9B3EC57196DE56C00B5DBEB /* PagesFromNibViewController.m in Sources */,
+				E9B3EC54196DE52800B5DBEB /* SimplePagedScrollViewPage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

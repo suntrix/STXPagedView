@@ -1,9 +1,12 @@
 //
 //  STXPagedScrollView.h
-//  PagedScrollView
+//  STXPagedScrollView
 //
 //  Created by Sebastian Owodziń on 16/01/2014.
 //  Copyright (c) 2014 Sebastian Owodziń. All rights reserved.
+//
+//  This is a part of STXPagedScrollView project.
+//  Project home page: https://github.com/suntrix/STXPagedScrollView
 //
 
 #import <UIKit/UIKit.h>
@@ -15,11 +18,14 @@
 
 @interface STXPagedScrollView : UIView <UIScrollViewDelegate>
 
+@property (nonatomic, strong) UIScrollView * scrollView;
+
 @property (nonatomic) id<STXPagedScrollViewDelegate> delegate;
 
 @property (nonatomic) id<STXPagedScrollViewDataSource> dataSource;
 
-@property (nonatomic, readonly) NSInteger currentElementIndex;
+@property (nonatomic) NSInteger currentElementIndex;
+
 @property (nonatomic, readonly) NSInteger numberOfElements;
 
 - (void)reloadData;

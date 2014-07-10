@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Qxc-GS-EAy" customClass="SimplePagedScrollViewPage">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uxj-ON-M2o">
+                    <rect key="frame" x="40" y="308" width="240" height="240"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="240" id="ZiD-FU-0BE"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNr-aW-xIi">
+                    <rect key="frame" x="20" y="133" width="280" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="p2V-cp-dep"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="JNr-aW-xIi" firstAttribute="top" secondItem="Qxc-GS-EAy" secondAttribute="top" constant="133" id="2NS-YD-db7"/>
+                <constraint firstItem="JNr-aW-xIi" firstAttribute="leading" secondItem="Qxc-GS-EAy" secondAttribute="leading" constant="20" id="3q6-xW-hMi"/>
+                <constraint firstItem="Uxj-ON-M2o" firstAttribute="leading" secondItem="Qxc-GS-EAy" secondAttribute="leading" constant="40" id="DFa-BX-tGG"/>
+                <constraint firstAttribute="bottom" secondItem="Uxj-ON-M2o" secondAttribute="bottom" constant="20" id="ZRX-uN-Gbq"/>
+                <constraint firstAttribute="trailing" secondItem="JNr-aW-xIi" secondAttribute="trailing" constant="20" id="lNU-d6-7ES"/>
+                <constraint firstAttribute="trailing" secondItem="Uxj-ON-M2o" secondAttribute="trailing" constant="40" id="ldm-bO-Axj"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outlet property="colorView" destination="Uxj-ON-M2o" id="oUW-YY-PKP"/>
+                <outlet property="titleLabel" destination="JNr-aW-xIi" id="iyn-tM-Pmi"/>
+            </connections>
+        </view>
+    </objects>
+</document>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Li4-UW-hM3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Li4-UW-hM3">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -36,15 +36,15 @@
                                             <segue destination="vXZ-lx-hvc" kind="push" id="C7V-bU-uSU"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Kh6-LH-7h1" style="IBUITableViewCellStyleDefault" id="J6A-eK-YlI">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Kh6-LH-7h1" style="IBUITableViewCellStyleDefault" id="J6A-eK-YlI">
                                         <rect key="frame" x="0.0" y="108" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J6A-eK-YlI" id="jMz-bi-egP">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="pages from NIB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kh6-LH-7h1">
-                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -52,6 +52,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="NyS-Sy-yXv" kind="push" id="TlF-wq-t7f"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="L8G-xa-6pl" style="IBUITableViewCellStyleDefault" id="OQx-zh-vVe">
                                         <rect key="frame" x="0.0" y="152" width="320" height="44"/>
@@ -111,7 +114,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EYh-sf-4MD" customClass="STXPagedScrollView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EYh-sf-4MD" customClass="STXPagedScrollView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -126,6 +129,12 @@
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="EYh-sf-4MD" secondAttribute="bottom" id="BlA-Xt-ozn"/>
+                            <constraint firstAttribute="trailing" secondItem="EYh-sf-4MD" secondAttribute="trailing" id="K6q-eg-dRZ"/>
+                            <constraint firstItem="EYh-sf-4MD" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="QpW-7g-A5U"/>
+                            <constraint firstItem="EYh-sf-4MD" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="VFH-ZJ-xy8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="g5D-Ie-s1V"/>
                     <connections>
@@ -136,6 +145,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="579" y="-1087"/>
+        </scene>
+        <!--Pages From Nib View Controller-->
+        <scene sceneID="95a-Qk-k14">
+            <objects>
+                <viewController id="NyS-Sy-yXv" customClass="PagesFromNibViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Vw-PY-bp5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Aao-fn-sVK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0YC-lU-jwV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v8M-W7-0hW" customClass="STXPagedScrollView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hK5-dC-mYV">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="77Q-rT-HHp"/>
+                                    <barButtonItem enabled="NO" title="0/0" style="plain" id="3cA-IO-pra"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="t5n-Cs-Qfp"/>
+                    <connections>
+                        <outlet property="pageInfoLabel" destination="3cA-IO-pra" id="KRc-Ee-AGs"/>
+                        <outlet property="pagedView" destination="v8M-W7-0hW" id="921-D3-6WJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Pr-Iw-lkP" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="591" y="-367"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

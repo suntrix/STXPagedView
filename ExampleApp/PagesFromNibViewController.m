@@ -1,34 +1,38 @@
 //
-//  BasicViewController.m
-//  ExampleApp
+//  PagesFromNibViewController.m
+//  STXPagedScrollView
 //
-//  Created by Sebastian Owodziń on 06/05/14.
+//  Created by Sebastian Owodziń on 09/07/2014.
 //  Copyright (c) 2014 Sebastian Owodziń. All rights reserved.
 //
 //  This is a part of STXPagedScrollView project.
 //  Project home page: https://github.com/suntrix/STXPagedScrollView
 //
 
-#import "BasicViewController.h"
+#import "PagesFromNibViewController.h"
 
-@interface BasicViewController () {
+#import "SimplePagedScrollViewPage.h"
+
+@interface PagesFromNibViewController () {
     NSArray *   __data;
 }
 
 @end
 
-@implementation BasicViewController
+@implementation PagesFromNibViewController
 
 #pragma mark UIViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     __data = @[ [UIColor redColor], [UIColor greenColor], [UIColor blueColor], [UIColor purpleColor], [UIColor yellowColor] ];
+    
+    [self.pagedView registerNib:[UINib nibWithNibName:@"SimplePagedScrollViewPage" bundle:[NSBundle mainBundle]] forPageReuseIdentifier:@"Simple"];
     
     self.pagedView.delegate = self;
     self.pagedView.dataSource = self;
-    
+
     [self.pagedView addObserver:self forKeyPath:@"currentElementIndex" options:NSKeyValueObservingOptionOld context:NULL];
 }
 
@@ -53,9 +57,10 @@
 }
 
 - (STXPagedScrollViewPage *)pagedScrollView:(STXPagedScrollView *)pagedScrollView pageForElementAtIndex:(NSInteger)index {
-    STXPagedScrollViewPage *page = [pagedScrollView dequeueReusablePageWithIdentifier:@"SomePageIdentifier"];
+    SimplePagedScrollViewPage *page = (SimplePagedScrollViewPage *)[pagedScrollView dequeueReusablePageWithIdentifier:@"Simple"];
     
-    page.backgroundColor = __data[index];
+    page.titleLabel.text = NSStringFromClass([__data[index] class]);
+    page.colorView.backgroundColor = __data[index];
     
     return page;
 }
