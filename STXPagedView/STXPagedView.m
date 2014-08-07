@@ -1,14 +1,17 @@
 //
-//  STXPagedScrollView.m
-//  STXPagedScrollView
+//  STXPagedView.m
+//  STXPagedView
 //
 //  Created by Sebastian Owodziń on 16/01/2014.
 //  Copyright (c) 2014 Sebastian Owodziń. All rights reserved.
 //
+//  This is a part of STXPagedView project.
+//  Project home page: https://github.com/suntrix/STXPagedView
+//
 
-#import "STXPagedScrollView.h"
+#import "STXPagedView.h"
 
-@interface STXPagedScrollView ()
+@interface STXPagedView ()
 
 @property (nonatomic, strong) NSMutableDictionary *    _registeredNibs;
 @property (nonatomic, strong) NSMutableDictionary *    _registeredClasses;
@@ -17,15 +20,13 @@
 
 - (void)__buildPageForCurrentElementIndex;
 
-- (void)__buildPageForCurrentElementIndex:(BOOL)autoScroll;
-
-- (void)__deviceOrientationDidChanged:(NSNotification *)notification;
+- (void)__buildPageForCurrentElementIndex:(BOOL)autoScroll animated:(BOOL)animated;
 
 @end
 
-@implementation STXPagedScrollView
+@implementation STXPagedView
 
-- (void)setDataSource:(id<STXPagedScrollViewDataSource>)dataSource {
+- (void)setDataSource:(id<STXPagedViewDataSource>)dataSource {
     if ( ![_dataSource isEqual:dataSource] ) {
         _dataSource = dataSource;
         [self reloadData];
@@ -33,7 +34,7 @@
 }
 
 - (NSInteger)numberOfElements {
-    return [_dataSource numberOfElementsInPagedScrollView:self];
+    return [_dataSource numberOfElementsInPagedView:self];
 }
 
 - (void)reloadData {
@@ -50,16 +51,16 @@
     }
 }
 
-- (NSInteger)indexOfPage:(STXPagedScrollViewPage *)cell {
+- (NSInteger)indexOfPage:(STXPagedViewPage *)cell {
     return ceil(cell.frame.origin.x/_scrollView.frame.size.width);
 }
 
-- (STXPagedScrollViewPage *)pageAtIndex:(NSInteger)index {
-    __block STXPagedScrollViewPage *page = nil;
+- (STXPagedViewPage *)pageAtIndex:(NSInteger)index {
+    __block STXPagedViewPage *page = nil;
     
     NSInteger cellOffset = _scrollView.frame.size.width * index;
     
-    [_scrollView.subviews enumerateObjectsUsingBlock:^(STXPagedScrollViewPage *obj, NSUInteger idx, BOOL *stop) {
+    [_scrollView.subviews enumerateObjectsUsingBlock:^(STXPagedViewPage *obj, NSUInteger idx, BOOL *stop) {
         if ( obj.frame.origin.x == cellOffset ) {
             page = obj;
             *stop = YES;
@@ -74,7 +75,7 @@
     [self __buildPageForCurrentElementIndex:YES animated:animated];
 }
 
-- (STXPagedScrollViewPage *)dequeueReusablePageWithIdentifier:(NSString *)identifier {
+- (STXPagedViewPage *)dequeueReusablePageWithIdentifier:(NSString *)identifier {
     if ( nil != __registeredNibs[identifier] ) {
         return [[(UINib *)__registeredNibs[identifier] instantiateWithOwner:nil options:nil] firstObject];
     }
@@ -83,7 +84,7 @@
         return [[__registeredClasses[identifier] alloc] initWithReuseIdentifier:identifier];
     }
     
-    return [[STXPagedScrollViewPage alloc] initWithReuseIdentifier:identifier];
+    return [[STXPagedViewPage alloc] initWithReuseIdentifier:identifier];
 }
 
 - (void)registerNib:(UINib *)nib forPageReuseIdentifier:(NSString *)identifier {
@@ -112,7 +113,7 @@
     
     NSMutableArray *pagesToRelease = [NSMutableArray array];
     
-    [_scrollView.subviews enumerateObjectsUsingBlock:^(STXPagedScrollViewPage *obj, NSUInteger idx, BOOL *stop) {
+    [_scrollView.subviews enumerateObjectsUsingBlock:^(STXPagedViewPage *obj, NSUInteger idx, BOOL *stop) {
         NSInteger objIndex = [self indexOfPage:obj];
         
         if ( ( objIndex < self.currentElementIndex - 1 || objIndex > self.currentElementIndex + 1 ) && objIndex < self.numberOfElements &&  0 <= objIndex ) {
@@ -120,12 +121,12 @@
         }
     }];
     
-    [pagesToRelease enumerateObjectsUsingBlock:^(STXPagedScrollViewPage *obj, NSUInteger idx, BOOL *stop) {
+    [pagesToRelease enumerateObjectsUsingBlock:^(STXPagedViewPage *obj, NSUInteger idx, BOOL *stop) {
         [obj removeFromSuperview];
     }];
     
-    if ( [_delegate respondsToSelector:@selector(pagedScrollViewDidEndDecelerating:)] ) {
-        [_delegate pagedScrollViewDidEndDecelerating:self];
+    if ( [_delegate respondsToSelector:@selector(pagedViewDidEndDecelerating:)] ) {
+        [_delegate pagedViewDidEndDecelerating:self];
     }
 }
 
@@ -133,15 +134,15 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ( [keyPath isEqualToString:@"currentElementIndex"] && [object isEqual:self] ) {
-        if ( [_delegate respondsToSelector:@selector(pagedScrollView:didEndDisplayingPage:forElementAtIndex:)] ) {
+        if ( [_delegate respondsToSelector:@selector(pagedView:didEndDisplayingPage:forElementAtIndex:)] ) {
             NSInteger previousElementIndex = [change[NSKeyValueChangeOldKey] integerValue];
             if ( -1 != previousElementIndex ) {
-                [_delegate pagedScrollView:self didEndDisplayingPage:[self pageAtIndex:previousElementIndex] forElementAtIndex:previousElementIndex];
+                [_delegate pagedView:self didEndDisplayingPage:[self pageAtIndex:previousElementIndex] forElementAtIndex:previousElementIndex];
             }
         }
         
-        if ( [_delegate respondsToSelector:@selector(pagedScrollView:willDisplayPage:forElementAtIndex:)] ) {
-            [_delegate pagedScrollView:self willDisplayPage:[self pageAtIndex:self.currentElementIndex] forElementAtIndex:self.currentElementIndex];
+        if ( [_delegate respondsToSelector:@selector(pagedView:willDisplayPage:forElementAtIndex:)] ) {
+            [_delegate pagedView:self willDisplayPage:[self pageAtIndex:self.currentElementIndex] forElementAtIndex:self.currentElementIndex];
         }
     }
 }
@@ -187,15 +188,13 @@
     __registeredNibs = [NSMutableDictionary dictionary];
     __registeredClasses = [NSMutableDictionary dictionary];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(__deviceOrientationDidChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
-    
     [self addObserver:self forKeyPath:@"currentElementIndex" options:NSKeyValueObservingOptionOld context:NULL];
 }
 
 - (void)__buildPageForCurrentElementIndex {
     for ( NSInteger idx = self.currentElementIndex - 1; idx <= self.currentElementIndex + 1; idx++ ) {
         if ( -1 < idx && idx < self.numberOfElements && nil == [self pageAtIndex:idx] ) {
-            STXPagedScrollViewPage *page = [_dataSource pagedScrollView:self pageForElementAtIndex:idx];
+            STXPagedViewPage *page = [_dataSource pagedView:self pageForElementAtIndex:idx];
             page.frame = CGRectMake(_scrollView.frame.size.width * idx, 0, _scrollView.frame.size.width, _scrollView.frame.size.height);
             [_scrollView addSubview:page];
         }
@@ -208,16 +207,6 @@
     if ( autoScroll ) {
         [_scrollView scrollRectToVisible:[self pageAtIndex:self.currentElementIndex].frame animated:animated];
     }
-}
-
-- (void)__deviceOrientationDidChanged:(NSNotification *)notification {
-#warning FIX this method
-//    NSLog(@"%s notification: %@", __PRETTY_FUNCTION__, notification);
-    
-    NSInteger currentCellIndex = self.currentElementIndex;
-    
-    [self reloadData];
-    [self scrollToElementAtIndex:currentCellIndex animated:NO];
 }
 
 @end
